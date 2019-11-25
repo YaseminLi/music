@@ -1,4 +1,5 @@
 # music-vue
+学习于：[Vue2.0开发企业级移动端音乐Web App](https://coding.imooc.com/class/chapter/107.html#Anchor)
 
 ## Project setup
 ```
