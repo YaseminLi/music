@@ -1,0 +1,22 @@
+@import "./variable";
+@media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+    .border-1px
+        &&::after
+            -webkit-transform: scaleY(0.7)
+            transform: scaleY(0.7)
+    .border-right-1px
+        &&::after
+            -webkit-transform: scaleX(0.7)
+            transform: scaleX(0.7)
+@media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
+    .border-1px
+         &&::after
+            -webkit-transform: scaleY(0.5)
+            transform: scaleY(0.5)
+    .border-right-1px
+        &&::after
+            -webkit-transform: scaleX(0.5)
+            transform: scaleX(0.5)
+body, html
+  line-height: 1
+  font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback'
