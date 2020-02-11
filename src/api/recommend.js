@@ -1,4 +1,7 @@
 import jsonp from 'common/js/jsonp.js';
+// import recommend from '../data/recommend.js'
+// import discList from '../data/discList'
+// import songList from '../data/songList'
 import { commonParams, options } from 'api/config.js';
 import axios from 'axios';
 export function getRecommend() {
@@ -10,6 +13,21 @@ export function getRecommend() {
     })
     return jsonp(url, data, options)
 }
+// export function getRecommend() {
+//     return new Promise((resolve)=>{
+//         resolve(recommend)
+//     })
+// }
+// export function getDiscList() {
+//     return new Promise((resolve)=>{
+//         resolve(discList)
+//     })
+// }
+// export function getSongList() {
+//     return new Promise((resolve)=>{
+//         resolve(songList)
+//     })
+// }
 export function getDiscList() {
     const url = '/api/getDiscList';
     const data = Object.assign({}, commonParams, {

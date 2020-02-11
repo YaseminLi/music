@@ -1,7 +1,21 @@
 import jsonp from 'common/js/jsonp.js';
 import { commonParams, options } from 'api/config.js';
+// import singer from '../data/singer'
+// import singerDetail from '../data/singerDetail'
 import axios from 'axios';
 
+// export function getSinger() {
+
+//   return new Promise((resolve) => {
+//     resolve(singer)
+//   })
+// }
+// export function getSinger(singer) {
+
+//   return new Promise((resolve) => {
+//     resolve(singerDetail)
+//   })
+// }
 export function getSinger() {
   const url = 'https://c.y.qq.com/v8/fcg-bin/v8.fcg'
 
@@ -17,7 +31,7 @@ export function getSinger() {
   })
   return jsonp(url, data, options)
 }
-export function getSingerDetail(singer){
+export function getSingerDetail(singer) {
   const url = '/api/getSingerDetail';
   const data = Object.assign({}, commonParams, {
     notice: 0,
@@ -32,7 +46,7 @@ export function getSingerDetail(singer){
   });
   return axios.get(url, {
     params: data
-  }).then((res) => { 
+  }).then((res) => {
     return Promise.resolve(res.data)
   })
 }
