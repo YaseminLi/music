@@ -14,14 +14,14 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect:  '/rank',
-      component: Recommend
+      redirect:  '/recommend',//重定向，用户访问/时，会被替换成/recommend
+      component: Recommend//该路径下显示的组件
     },
     {
       path: '/rank',
-      name: 'rank',
+      name: 'rank',//命名路由
       component: Rank,
-      children:[{
+      children:[{//嵌套路由
         path:":id",
         component:topList
       }]

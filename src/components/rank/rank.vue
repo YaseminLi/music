@@ -63,9 +63,10 @@ export default {
         }
       });
     },
+    // 跳转到子路由,this.$router为路由实例，push方法会向 history栈添加一个新的记录，当用户点击浏览器后退按钮时，则回到之前的 URL。
     selectItem(item) {
       this.$router.push({
-        path: `/rank/${item.id}`
+        path: `/rank/${item.id}` 
       });
       this.setTopList(item);
     },

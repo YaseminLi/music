@@ -5,7 +5,7 @@
       <scroll ref="scroll" class="scroll" :data="keyHistory">
         <div>
           <div class="hotkeys">
-            <div class="title">热门搜索</div>
+            <div class="title" >热门搜索</div>
             <div class="container">
               <span
                 class="key"
@@ -40,18 +40,18 @@ import searchBox from "base/search-box/search-box";
 import suggest from "base/suggest/suggest";
 import searchList from "base/search-list/search-list";
 import scroll from "base/scroll/scroll";
-import { playlistMixin,searchMixin} from "common/js/mixin.js";
+import { playlistMixin, searchMixin } from "common/js/mixin.js";
 import { mapGetters, mapActions } from "vuex";
 const HOTKEYS_NUM = 9;
 export default {
-  mixins: [playlistMixin,searchMixin],
+  mixins: [playlistMixin, searchMixin],
   data() {
     return {
-      hotkeys: [],
+      hotkeys: []
     };
   },
   computed: {
-    ...mapGetters(['playList']),
+    ...mapGetters(["playList"]),
     keyHistory() {
       return this.hotkeys.concat(this.searchHistory);
     }
@@ -67,16 +67,14 @@ export default {
       this.$refs.scroll.refresh();
       this.$refs.suggest.refresh();
     },
-    
+
     _initHotKey() {
       getHotKey().then(res => {
         if (res.code == ERR_OK)
           this.hotkeys = res.data.hotkey.slice(0, HOTKEYS_NUM);
       });
     },
-    ...mapActions([
-      "clearSearchHistory"
-    ])
+    ...mapActions(["clearSearchHistory"])
   },
   watch: {
     query(newQuery) {
@@ -99,7 +97,7 @@ export default {
   width: 100%
   top: 44px
   bottom: 0
-  background white
+  background: white
   .search-wrapper
     position: fixed
     width: 100%

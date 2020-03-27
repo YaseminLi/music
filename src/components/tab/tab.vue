@@ -1,6 +1,14 @@
 <template>
   <div class="tab">
+    <!-- 默认router-link为a标签，tag可以生成别的，to属性指定目标地址 -->
+    <!-- 以下几种写法都可以 v-bind是绑定动态属性-->
      <router-link tag="div" class="tab-item" to="/recommend">
+     <!-- <router-link tag="div" class="tab-item" v-bind:to="'/recommend'"> -->
+     <!-- <router-link tag="div" class="tab-item" :to="'/recommend'"> -->
+     <!-- <router-link tag="div" class="tab-item" :to="{path:'/recommend'}"> -->
+     <!-- <router-link tag="div" class="tab-item" :to="{name:'recommend',params: { userId: 123 }}"> -->
+       <!-- 带查询参数，下面的结果为 /recommend?plan=private -->
+     <!-- <router-link tag="div" class="tab-item" :to="{path:'/recommend',query:{ plan: 'private' }}"> -->
       <span class="tab-link">推荐</span>
     </router-link>
     <router-link tag="div" class="tab-item" to="/singer">
